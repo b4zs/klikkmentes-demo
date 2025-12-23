@@ -1,5 +1,5 @@
 import { SchedulerService, EventService, SeatingService, NotificationService } from '@lib/logic';
-import type { Event, EventRoundSet, Notification } from '@lib/logic';
+import type { Event, EventRoundSet, Notification, User } from '@lib/logic';
 
 let schedulerInterval: ReturnType<typeof setInterval> | null = null;
 const isRunning = ref(false);
@@ -8,38 +8,29 @@ export const useScheduler = () => {
   const { getAllEvents, updateEvent } = useEventStore();
   const { getRoundSetsByEvent, addRoundSets } = useRoundSetStore();
   const { addNotifications } = useNotificationStore();
-
-  const createRepositories = () => {
-    return {
-      eventRepository: {
-        getAll: () => getAllEvents(),
-        update: (event: Event) => updateEvent(event.id, event)
-      },
-      roundSetRepository: {
-        getByEventId: (eventId: number) => getRoundSetsByEvent(eventId),
-        saveAll: (roundSets: EventRoundSet[]) => addRoundSets(roundSets)
-      },
-      notificationRepository: {
-        saveAll: (notifications: Notification[]) => addNotifications(notifications)
-      }
-    };
-  };
+  const { getAllUsers } = useUserStore();
+  const { getAllNotifications } = useNotificationStore();
 
   const tick = () => {
-    const repos = createRepositories();
-    const eventService = new EventService(repos.eventRepository);
-    const seatingService = new SeatingService();
-    const notificationService = new NotificationService();
-    const schedulerService = new SchedulerService(
-      repos.eventRepository,
-      repos.roundSetRepository,
-      repos.notificationRepository,
-      eventService,
-      seatingService,
-      notificationService
-    );
+    const schedulerService = new SchedulerService();
 
-    schedulerService.processMinutelyTick();
+    // Build the scheduler context
+    const context = {
+      events: getAllEvents(),
+      eventRoundSets: getRoundSetsByEvent(1), // Get all round sets for event 1
+      notifications: getAllNotifications(),
+      users: getAllUsers()
+    };
+
+    const result = schedulerService.processMinutelyTick(context);
+
+    // Save results
+    if (result.newRoundSets.length > 0) {
+      addRoundSets(result.newRoundSets);
+    }
+    if (result.newNotifications.length > 0) {
+      addNotifications(result.newNotifications);
+    }
   };
 
   const start = () => {

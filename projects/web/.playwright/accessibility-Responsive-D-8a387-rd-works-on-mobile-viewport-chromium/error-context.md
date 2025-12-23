@@ -1,0 +1,67 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e4]:
+    - banner [ref=e5]:
+      - generic [ref=e7]:
+        - generic [ref=e8]:
+          - heading "Diana Davis" [level=1] [ref=e9]
+          - paragraph [ref=e10]: Klikkmentes December 2025
+        - button "Switch User" [ref=e11]
+    - main [ref=e12]:
+      - generic [ref=e13]:
+        - generic [ref=e15]:
+          - generic [ref=e16]:
+            - generic [ref=e17]: Current Round
+            - generic [ref=e18]: "1"
+            - generic [ref=e19]: of 5 rounds
+          - generic [ref=e21]:
+            - generic [ref=e24]: "1"
+            - generic [ref=e27]: "2"
+            - generic [ref=e30]: "3"
+            - generic [ref=e33]: "4"
+            - generic [ref=e36]: "5"
+          - generic [ref=e37]:
+            - generic [ref=e38]: Time Remaining
+            - generic [ref=e39]: 09:59
+        - generic [ref=e40]:
+          - heading "Your Table" [level=2] [ref=e41]
+          - generic [ref=e42]:
+            - generic [ref=e43]:
+              - generic [ref=e44]: Table Number
+              - generic [ref=e45]: "9"
+            - generic [ref=e46]:
+              - heading "Your Tablemates" [level=3] [ref=e47]
+              - generic [ref=e48]:
+                - generic [ref=e49]:
+                  - generic [ref=e51]: B
+                  - generic [ref=e52]: Bob Brown
+                - generic [ref=e53]:
+                  - generic [ref=e55]: G
+                  - generic [ref=e56]: Grace Garcia
+                - generic [ref=e57]:
+                  - generic [ref=e59]: L
+                  - generic [ref=e60]: Leo Lee
+        - generic [ref=e61]:
+          - heading "Notifications" [level=2] [ref=e63]
+          - generic [ref=e65]:
+            - paragraph [ref=e66]: "Round 1 is starting! You are assigned to Table 9. Your tablemates: Leo Lee, Grace Garcia, Bob Brown."
+            - paragraph [ref=e67]: Dec 23, 08:55 PM
+  - generic:
+    - img
+  - generic:
+    - generic:
+      - generic:
+        - button "Go to parent" [disabled]
+        - button "Open in editor"
+        - button "Close"
+  - generic [ref=e68]:
+    - button "Toggle Nuxt DevTools" [ref=e69] [cursor=pointer]:
+      - img [ref=e70]
+    - generic "Page load time" [ref=e73]:
+      - generic [ref=e74]: "69"
+      - generic [ref=e75]: ms
+    - button "Toggle Component Inspector" [ref=e77] [cursor=pointer]:
+      - img [ref=e78]
+```

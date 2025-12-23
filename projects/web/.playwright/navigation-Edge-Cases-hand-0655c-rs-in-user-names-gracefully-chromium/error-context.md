@@ -1,0 +1,73 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e5]:
+    - generic [ref=e6]:
+      - generic [ref=e7]:
+        - heading "Klikkmentes" [level=1] [ref=e8]
+        - paragraph [ref=e9]: No-Clique Party
+      - generic [ref=e10]:
+        - generic [ref=e11]:
+          - generic [ref=e12]: Select your name
+          - combobox "Select your name" [ref=e13]:
+            - option "Choose from list..." [selected]
+            - option "Alice Anderson"
+            - option "Amy Abbott"
+            - option "Ben Barnes"
+            - option "Bob Brown"
+            - option "Charlie Clark"
+            - option "Claire Cooper"
+            - option "Dan Diaz"
+            - option "Diana Davis"
+            - option "Emma Edwards"
+            - option "Eva Evans"
+            - option "Felix Foster"
+            - option "Frank Fischer"
+            - option "Gina Green"
+            - option "Grace Garcia"
+            - option "Henry Harris"
+            - option "Hugo Hill"
+            - option "Iris Ivanov"
+            - option "Ivy Ibrahim"
+            - option "Jack Johnson"
+            - option "James Jones"
+            - option "Kate Kim"
+            - option "Kylie Khan"
+            - option "Leo Lee"
+            - option "Liam Lopez"
+            - option "Maya Miller"
+            - option "Mia Martinez"
+            - option "Nick Nelson"
+            - option "Noah Nguyen"
+            - option "Olivia O'Brien"
+            - option "Peter Patel"
+            - option "Quinn Quinn"
+            - option "Rachel Rodriguez"
+            - option "Sam Smith"
+            - option "Tina Taylor"
+            - option "Uma Ueda"
+            - option "Victor Vargas"
+            - option "Wendy Wilson"
+            - option "Xavier Xu"
+            - option "Yara Yang"
+            - option "Zack Zhang"
+        - button "Continue" [disabled] [ref=e14]
+    - paragraph [ref=e16]: 40 participants • 10 tables • 5 rounds
+  - generic:
+    - img
+  - generic:
+    - generic:
+      - generic:
+        - button "Go to parent" [disabled]
+        - button "Open in editor"
+        - button "Close"
+  - generic [ref=e17]:
+    - button "Toggle Nuxt DevTools" [ref=e18] [cursor=pointer]:
+      - img [ref=e19]
+    - generic "Page load time" [ref=e22]:
+      - generic [ref=e23]: "14"
+      - generic [ref=e24]: ms
+    - button "Toggle Component Inspector" [ref=e26] [cursor=pointer]:
+      - img [ref=e27]
+```
