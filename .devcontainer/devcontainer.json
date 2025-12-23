@@ -1,0 +1,24 @@
+{
+  "name": "klikkmentes-demo",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node",
+  "forwardPorts": [ 3306, 3000, 3001, 4000, 8080, 5173 ],
+  "workspaceFolder": "/app",
+  "containerEnv": {
+  },
+  "customizations": {
+    "jetbrains": {
+       "projector": true
+    },
+    "vscode": {
+      "extensions": [
+        "bmewburn.vscode-intelephense-client",
+        "xdebug.php-debug",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "Vue.volar"
+      ],
+      "settings": {
+      }
+    }
+  }
+}
